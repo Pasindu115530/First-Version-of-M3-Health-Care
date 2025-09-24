@@ -1,0 +1,8 @@
+PyQt5>=5.15.0
+opencv-python>=4.5.0
+numpy>=1.21.0
+psutil>=5.8.0
+mediapipe>=0.10.0
+plyer>=2.1.0
+pywin32>=300; sys_platform == 'win32'  # Windows only for auto-start
+win10toast>=0.9; sys_platform == 'win32'
