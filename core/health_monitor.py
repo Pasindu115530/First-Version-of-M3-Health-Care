@@ -12,6 +12,7 @@ from collections import deque
 import warnings
 
 from utils.constants import *
+from utils.voice import voice
 
 # Handle optional MediaPipe dependency
 try:
@@ -213,6 +214,8 @@ class HealthMonitor:
         
         print("=== EYE EXERCISE STARTED ===")
         print("Please look to the RIGHT side for 15 seconds")
+        # Voice guidance
+        voice.speak("Eye exercise starting. Please look to the right for fifteen seconds.")
         
         # Send initial notification
         self.send_notification(
@@ -246,6 +249,8 @@ class HealthMonitor:
                 if self.time_left <= 0:
                     print("=== RIGHT SIDE COMPLETE ===")
                     print("Now please look to the LEFT side")
+                    # Voice guidance
+                    voice.speak("Good. Now look to the left for fifteen seconds.")
                     self.current_phase = "left"
                     self.countdown_active = False
                     self.paused_time_left = 15.0
@@ -263,6 +268,8 @@ class HealthMonitor:
                     self.countdown_active = False
                     self.paused_time_left = self.time_left
                     print("⚠️  Please maintain looking RIGHT. Timer paused.")
+                    # Voice guidance
+                    voice.speak("Please keep looking right to continue.")
                     self.send_notification(
                         "👀 Keep Looking Right",
                         "Please maintain your gaze to the RIGHT side to continue the exercise",
@@ -297,6 +304,8 @@ class HealthMonitor:
                     total_duration = current_time - self.eye_exercise_start_time
                     
                     print(f"=== EYE EXERCISE COMPLETED in {total_duration:.1f} seconds ===")
+                    # Voice guidance
+                    voice.speak("Exercise complete. Great job.")
                     
                     self.send_notification(
                         "✅ Exercise Complete!",
@@ -321,6 +330,8 @@ class HealthMonitor:
                     self.countdown_active = False
                     self.paused_time_left = self.time_left
                     print("⚠️  Please maintain looking LEFT. Timer paused.")
+                    # Voice guidance
+                    voice.speak("Please keep looking left to continue.")
                     self.send_notification(
                         "👀 Keep Looking Left",
                         "Please maintain your gaze to the LEFT side to continue the exercise",
