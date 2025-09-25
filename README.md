@@ -18,6 +18,15 @@ It focuses on **user health while using a computer** by reminding users to take 
   - User can start/stop the app manually.
   - Option to switch between Manual and Auto mode.
 
+- **Voice-Guided Eye Exercises**
+  - The app gives **step-by-step voice instructions** during exercises:
+    - “Look left 👀”
+    - “Look right 👀”
+    - “Look up 👆”
+    - “Look down 👇”
+    - “Close eyes and relax 💤”
+  - This makes the session easy to follow without watching the screen.
+
 - **Health Rules Implemented**
   - **20-20-20 Rule** → Every 20 minutes, look at something 20 feet away for 20 seconds.
   - **Eye Blinking Reminder** → Prevents eye strain by reminding you to blink.
